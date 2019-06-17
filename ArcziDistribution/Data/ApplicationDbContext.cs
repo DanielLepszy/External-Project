@@ -9,8 +9,9 @@ namespace ArcziDistribution.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
-        //public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-        //    : base(options);
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+            : base(options)
+        { }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=AutoClientDatabase;Trusted_Connection=True;MultipleActiveResultSets=true;");
