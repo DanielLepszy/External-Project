@@ -1,0 +1,102 @@
+﻿@{ ViewData["Title"] = "Contact";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+<form id="reminderform" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='PeFMmpqIP9oAPz4OTDHzvOPFMkrYPsegYOv2dEdjCChWdsJdGKwWE4LQTxE0Me5j' /> <div id="div_id_client" class="form-group row">
+        <label for="id_client" class="form-control-label col-md-3 text-right requiredField">
+            Klient<span class="asteriskField">*</span>
+        </label> <div class="col-md-9">
+            <select name="client" class="select form-control" required id="id_client">
+                <option value="" selected>--nie wybrano klienta--</option>
+
+            </select>
+        </div>
+    </div> <div id="div_id_car" class="form-group row">
+        <label for="id_car" class="form-control-label col-md-3 text-right">
+            Dotyczy pojazdu
+        </label> <div class="col-md-9">
+            <select name="car" class="select form-control" id="id_car">
+                <option value="" selected>--nie wybrano pojazdu--</option>
+
+            </select>
+        </div>
+    </div> <div id="div_id_service" class="form-group row">
+        <label for="id_service" class="form-control-label col-md-3 text-right">
+            Dotyczy usługi
+        </label> <div class="col-md-9">
+            <select name="service" class="select form-control" id="id_service">
+                <option value="" selected>--nie wybrano usługi--</option>
+
+            </select>
+        </div>
+    </div> <div id="div_id_schedule_type" class="form-group row">
+        <label for="id_schedule_type_0" class="form-control-label col-md-3 text-right requiredField">
+            Kiedy wysłać przypomnienie?<span class="asteriskField">*</span>
+        </label> <div class="col-md-9" class="">
+            <div class="radio">
+                <label for="id_schedule_type_1" class="">
+                    <input type="radio" checked="checked" name="schedule_type" id="id_schedule_type_1" value="days" class="">
+                    Za X dni
+                </label>
+            </div> <div class="radio">
+                <label for="id_schedule_type_2" class="">
+                    <input type="radio" name="schedule_type" id="id_schedule_type_2" value="weeks" class="">
+                    Za X tygodni
+                </label>
+            </div> <div class="radio">
+                <label for="id_schedule_type_3" class="">
+                    <input type="radio" name="schedule_type" id="id_schedule_type_3" value="months" class="">
+                    Za X miesięcy
+                </label>
+            </div> <div class="radio">
+                <label for="id_schedule_type_4" class="">
+                    <input type="radio" name="schedule_type" id="id_schedule_type_4" value="custom" class="">
+                    Chcę podać datę i godzinę
+                </label>
+            </div>
+        </div>
+    </div> <div id="div_id_schedule_param" class="form-group row">
+        <label for="id_schedule_param" class="form-control-label col-md-3 text-right requiredField">
+            Podaj wartość<span class="asteriskField">*</span>
+        </label> <div class="col-md-9"> <input type="number" name="schedule_param" class="numberinput form-control" required id="id_schedule_param" /> </div>
+    </div> <div id="div_id_custom_datetime" class="form-group row">
+        <label for="id_custom_datetime" class="form-control-label col-md-3 text-right">
+            Data i godzina wysłania
+        </label> <div class="col-md-9"> <input type="text" name="custom_datetime" class="datetimeinput form-control" id="id_custom_datetime" /> </div>
+    </div> <div id="div_id_generated_send_date" class="form-group row">
+        <label for="id_generated_send_date" class="form-control-label col-md-3 text-right">
+            Data i godzina wysłania
+        </label> <div class="col-md-9"> <p class="form-control-static" id="static_field_generated_send_date"><span class="val">--</span><input type="hidden" value="--" name="generated_send_date" /> </p> </div>
+    </div> <div id="div_id_message" class="form-group row">
+        <label for="id_message" class="form-control-label col-md-3 text-right requiredField">
+            Treść<span class="asteriskField">*</span>
+        </label> <div class="col-md-9">
+            <textarea name="message" cols="40" rows="3" maxlength="160" class="textarea form-control" required id="id_message">
+Przypominam o wizycie w warsztacie samochodowym Oneshout. Pozdrawiam, Oneshout Oneshout, tel.: +48 607 725 845</textarea> <small id="hint_id_message" class="text-muted"><a href="#" class="pull-right bold select-sms-template">Wybierz z szablonu</a></small>
+        </div>
+    </div> <div class="offset-md-3">
+        <div class="form-group">
+            <div class="col-md-offset-3 col-md-9">
+                <div id="div_id_send_self" class="checkbox">
+                    <label for="id_send_self" class="">
+                        <input type="checkbox" name="send_self" class="checkboxinput" id="id_send_self" />
+                        Wyślij również do mnie (email)
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-12 text-right">
+            <input type="submit"
+                   name="save_changes"
+                   value="Dodaj przypomnienie"
+                   class="btn btn-primary btn-primary bold"
+                   id="submit-id-save_changes" />
+
+        </div>
+
+    </div>
+</form>

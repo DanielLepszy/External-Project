@@ -1,0 +1,230 @@
+﻿@{ ViewData["Title"] = "Contact";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+<div class="container" id="content">
+
+    <div class="row">
+        <div class="col">
+            <div class="box">
+                <div class="heading">
+                    <div class="pull-left">
+                        <h1>Pojazdy</h1>
+                    </div>
+                    <div class="pull-right">
+                        <a href="/aplikacja/pojazdy/dodaj" class="btn btn-primary bold" data-toggle="tooltip" data-placement="top" title="Dodaj nowy pojazd do bazy danych"><i class="fa fa-plus-circle"></i> Nowy pojazd</a>
+                    </div>
+                </div>
+                <div class="content">
+
+                    <table class="table table-hover " cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Marka</th>
+                                <th>Model</th>
+                                <th>Klient</th>
+                                <th>Numer rej.</th>
+                                <th>Numer VIN</th>
+                                <th>Rok prod.</th>
+                                <th style="width: 100px;">Akcja</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<form id="carform" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='MKbqBghAx0iAdxaDBBpV5VdZTg3RiQ4rVk1Gsv4bktbWBqP2oIeieb9a0tgTfCVu' /> <div class="row">
+        <div class="col-md-9 offset-md-3 form-header">
+            Dane podstawowe
+        </div>
+
+    </div> <div id="div_id_client" class="form-group row">
+        <label for="id_client" class="form-control-label col-md-3 text-right requiredField">
+            Klient<span class="asteriskField">*</span>
+        </label> <div class="col-md-9">
+            <select name="client" class="select form-control" required id="id_client">
+                <option value="" selected>--nie wybrano klienta--</option>
+            </select>
+        </div>
+    </div> <div id="div_id_make" class="form-group row">
+        <label for="id_make" class="form-control-label col-md-3 text-right requiredField">
+            Marka<span class="asteriskField">*</span>
+        </label> <div class="col-md-9">
+            <select name="make" class="select form-control" required id="id_make">
+                <option value="" selected>--nie wybrano marki--</option>
+                <option value="Volkswagen">Volkswagen</option>
+                <option value="Audi">Audi</option>
+                <option value="BMW">BMW</option>
+                <option value="Opel">Opel</option>
+                <option value="Mercedes-Benz">Mercedes-Benz</option>
+                <option value="Acura">Acura</option>
+                <option value="Aixam">Aixam</option>
+                <option value="Alfa Romeo">Alfa Romeo</option>
+                <option value="Aro">Aro</option>
+                <option value="Aston Martin">Aston Martin</option>
+                <option value="Audi">Audi</option>
+                <option value="Austin">Austin</option>
+                <option value="Bentley">Bentley</option>
+                <option value="BMW">BMW</option>
+                <option value="Brilliance">Brilliance</option>
+                <option value="Buick">Buick</option>
+                <option value="Cadillac">Cadillac</option>
+                <option value="Chatenet">Chatenet</option>
+                <option value="Chevrolet">Chevrolet</option>
+                <option value="Chrysler">Chrysler</option>
+                <option value="Citroën">Citroën</option>
+                <option value="Comarth">Comarth</option>
+                <option value="Dacia">Dacia</option>
+                <option value="Daewoo">Daewoo</option>
+                <option value="Daihatsu">Daihatsu</option>
+                <option value="Dodge">Dodge</option>
+                <option value="Ferrari">Ferrari</option>
+                <option value="Fiat">Fiat</option>
+                <option value="Ford">Ford</option>
+                <option value="Gaz">Gaz</option>
+                <option value="GMC">GMC</option>
+                <option value="Gonow">Gonow</option>
+                <option value="Grecav">Grecav</option>
+                <option value="GWM">GWM</option>
+                <option value="Honda">Honda</option>
+                <option value="Hummer">Hummer</option>
+                <option value="Hyundai">Hyundai</option>
+                <option value="Infiniti">Infiniti</option>
+                <option value="Isuzu">Isuzu</option>
+                <option value="Jaguar">Jaguar</option>
+                <option value="Jeep">Jeep</option>
+                <option value="Kia">Kia</option>
+                <option value="Lada">Lada</option>
+                <option value="Lamborghini">Lamborghini</option>
+                <option value="Lancia">Lancia</option>
+                <option value="Land Rover">Land Rover</option>
+                <option value="Lexus">Lexus</option>
+                <option value="Ligier">Ligier</option>
+                <option value="Lincoln">Lincoln</option>
+                <option value="Lotus">Lotus</option>
+                <option value="LTI">LTI</option>
+                <option value="Mahindra">Mahindra</option>
+                <option value="Maserati">Maserati</option>
+                <option value="Maybach">Maybach</option>
+                <option value="Mazda">Mazda</option>
+                <option value="McLaren">McLaren</option>
+                <option value="Mercedes-Benz">Mercedes-Benz</option>
+                <option value="Mercury">Mercury</option>
+                <option value="MG">MG</option>
+                <option value="Microcar">Microcar</option>
+                <option value="Mini">Mini</option>
+                <option value="Mitsubishi">Mitsubishi</option>
+                <option value="Morgan">Morgan</option>
+                <option value="Moskwicz">Moskwicz</option>
+                <option value="Nissan">Nissan</option>
+                <option value="NSU">NSU</option>
+                <option value="Nysa">Nysa</option>
+                <option value="Oldsmobile">Oldsmobile</option>
+                <option value="Opel">Opel</option>
+                <option value="Peugeot">Peugeot</option>
+                <option value="Piaggio">Piaggio</option>
+                <option value="Plymouth">Plymouth</option>
+                <option value="Polonez">Polonez</option>
+                <option value="Pontiac">Pontiac</option>
+                <option value="Porsche">Porsche</option>
+                <option value="Proton">Proton</option>
+                <option value="Renault">Renault</option>
+                <option value="Rolls-Royce">Rolls-Royce</option>
+                <option value="Rover">Rover</option>
+                <option value="Saab">Saab</option>
+                <option value="Scion">Scion</option>
+                <option value="Seat">Seat</option>
+                <option value="Shuanghuan">Shuanghuan</option>
+                <option value="Skoda">Skoda</option>
+                <option value="Smart">Smart</option>
+                <option value="SsangYong">SsangYong</option>
+                <option value="Subaru">Subaru</option>
+                <option value="Suzuki">Suzuki</option>
+                <option value="Syrena">Syrena</option>
+                <option value="Talbot">Talbot</option>
+                <option value="Tarpan">Tarpan</option>
+                <option value="Tata">Tata</option>
+                <option value="Tavria">Tavria</option>
+                <option value="Tesla">Tesla</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Trabant">Trabant</option>
+                <option value="Triumph">Triumph</option>
+                <option value="Uaz">Uaz</option>
+                <option value="Vauxhall">Vauxhall</option>
+                <option value="Volkswagen">Volkswagen</option>
+                <option value="Volvo">Volvo</option>
+                <option value="Warszawa">Warszawa</option>
+                <option value="Wartburg">Wartburg</option>
+                <option value="Wołga">Wołga</option>
+                <option value="Zaporożec">Zaporożec</option>
+                <option value="Zastava">Zastava</option>
+                <option value="Żuk">Żuk</option>
+                <option value="Inny">Inny</option>
+
+            </select>
+        </div>
+    </div> <div id="div_id_model" class="form-group row">
+        <label for="id_model" class="form-control-label col-md-3 text-right">
+            Model
+        </label> <div class="col-md-9"> <input type="text" name="model" maxlength="64" class="textinput textInput form-control" id="id_model" /> </div>
+    </div> <div id="div_id_engine_type" class="form-group row">
+        <label for="id_engine_type" class="form-control-label col-md-3 text-right">
+            Rodzaj silnika
+        </label> <div class="col-md-9">
+            <select name="engine_type" class="select form-control" id="id_engine_type">
+                <option value="">---------</option>
+                <option value="diesel">Diesel</option>
+                <option value="benzyna" selected>Benzyna</option>
+                <option value="benzynagas">Benzyna + Gaz</option>
+                <option value="hybryda">Hybryda</option>
+                <option value="elektryczny">Elektryczny</option>
+
+            </select>
+        </div>
+    </div> <div id="div_id_engine_cap" class="form-group row">
+        <label for="id_engine_cap" class="form-control-label col-md-3 text-right">
+            Pojemność silnika / moc
+        </label> <div class="col-md-9"> <input type="text" name="engine_cap" maxlength="10" class="textinput textInput form-control" id="id_engine_cap" /> </div>
+    </div> <div id="div_id_milage" class="form-group row">
+        <label for="id_milage" class="form-control-label col-md-3 text-right">
+            Przebieg
+        </label> <div class="col-md-9"> <input type="number" name="milage" min="0" class="numberinput form-control" id="id_milage" /> </div>
+    </div> <div id="div_id_year" class="form-group row">
+        <label for="id_year" class="form-control-label col-md-3 text-right">
+            Rok produkcji
+        </label> <div class="col-md-9"> <input type="number" name="year" min="0" class="numberinput form-control" id="id_year" /> </div>
+    </div> <div id="div_id_registration" class="form-group row">
+        <label for="id_registration" class="form-control-label col-md-3 text-right">
+            Numer rejestracyjny
+        </label> <div class="col-md-9"> <input type="text" name="registration" maxlength="10" class="textinput textInput form-control" id="id_registration" /> </div>
+    </div> <div id="div_id_vin" class="form-group row">
+        <label for="id_vin" class="form-control-label col-md-3 text-right">
+            Numer VIN
+        </label> <div class="col-md-9"> <input type="text" name="vin" maxlength="64" class="textinput textInput form-control" id="id_vin" /> <small id="hint_id_vin" class="text-muted">Numer VIN jest automatycznie dekodowany</small> </div>
+    </div> <div id="div_id_note" class="form-group row">
+        <label for="id_note" class="form-control-label col-md-3 text-right">
+            Notatka
+        </label> <div class="col-md-9">
+            <textarea name="note" cols="40" rows="3" class="textarea form-control" id="id_note">
+</textarea>
+        </div>
+    </div> <div class="form-group row">
+        <div class="col-sm-12 text-right">
+            <a href="/aplikacja/pojazdy/" class="btn btn-light">Anuluj</a><input type="submit"
+                                                                                 name="save_changes"
+                                                                                 value="Dodaj pojazd"
+                                                                                 class="btn btn-primary btn-primary bold"
+                                                                                 id="submit-id-save_changes" />
+
+        </div>
+
+    </div>
+</form>

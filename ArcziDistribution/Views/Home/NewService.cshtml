@@ -1,0 +1,129 @@
+﻿@{ ViewData["Title"] = "Contact";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+<form id="serviceform" method="post">
+    <input type='hidden' name='csrfmiddlewaretoken' value='fCs4AeiRD6o5Soa9agiWw7h0ArXW05e1ocikrt5sqzhrghPyXn7jFndbHEaYXR54' /> <div id="div_id_client" class="form-group row">
+        <label for="id_client" class="form-control-label col-md-3 text-right">
+            Klient
+        </label> <div class="col-md-9">
+            <select name="client" class="select form-control" id="id_client">
+                <option value="" selected>--nie wybrano klienta--</option>
+            </select>
+        </div>
+    </div> <div id="div_id_car" class="form-group row">
+        <label for="id_car" class="form-control-label col-md-3 text-right">
+            Pojazd
+        </label> <div class="col-md-9">
+            <select name="car" class="select form-control" id="id_car">
+                <option value="" selected>--nie wybrano pojazdu--</option>
+
+            </select>
+        </div>
+    </div> <div id="div_id_type" class="form-group row">
+        <label for="id_type_0" class="form-control-label col-md-3 text-right requiredField">
+            Typ usługi<span class="asteriskField">*</span>
+        </label> <div class="col-md-9" class="">
+            <div class="radio">
+                <label for="id_type_1" class="">
+                    <input type="radio" name="type" id="id_type_1" value="inspection" class="">
+                    Przegląd
+                </label>
+            </div> <div class="radio">
+                <label for="id_type_2" class="">
+                    <input type="radio" checked="checked" name="type" id="id_type_2" value="repair" class="">
+                    Naprawa
+                </label>
+            </div> <div class="radio">
+                <label for="id_type_3" class="">
+                    <input type="radio" name="type" id="id_type_3" value="other" class="">
+                    Inna
+                </label>
+            </div>
+        </div>
+    </div> <div id="div_id_status" class="form-group row">
+        <label for="id_status" class="form-control-label col-md-3 text-right requiredField">
+            Status<span class="asteriskField">*</span>
+        </label> <div class="col-md-9">
+            <select name="status" class="select form-control" id="id_status">
+                <option value="done">Wykonana</option>
+                <option value="pending" selected>Do wykonania</option>
+                <option value="cancelled">Anulowana</option>
+
+            </select>
+        </div>
+    </div> <div id="div_id_service_datetime" class="form-group row">
+        <label for="id_service_datetime" class="form-control-label col-md-3 text-right">
+            Data i godzina wykonania usługi
+        </label> <div class="col-md-9"> <input type="text" name="service_datetime" class="datetimeinput form-control" id="id_service_datetime" /> <small id="hint_id_service_datetime" class="text-muted">Jeżeli podasz datę wykonania usługi, system zaproponuje Ci utworzenie automatycznego przypomnienia</small> </div>
+    </div> <div id="div_id_service_minutes" class="form-group row">
+        <label for="id_service_minutes" class="form-control-label col-md-3 text-right">
+            Czas trwania (minuty)
+        </label> <div class="col-md-9">
+            <select name="service_minutes" class="select form-control" id="id_service_minutes">
+                <option value="" selected>---------</option>
+                <option value="15">15 minut</option>
+                <option value="30">30 minut</option>
+                <option value="45">45 minut</option>
+                <option value="60">1 godzina</option>
+                <option value="90">1 godzina 30 minut</option>
+                <option value="120">2 godziny</option>
+                <option value="180">3 godziny</option>
+                <option value="240">4 godziny</option>
+                <option value="300">5 godzin</option>
+                <option value="360">6 godzin</option>
+                <option value="420">7 godzin</option>
+                <option value="480">8 godzin</option>
+
+            </select>
+        </div>
+    </div> <div id="div_id_title" class="form-group row">
+        <label for="id_title" class="form-control-label col-md-3 text-right requiredField">
+            Tytuł<span class="asteriskField">*</span>
+        </label> <div class="col-md-9"> <input type="text" name="title" maxlength="128" class="textinput textInput form-control" required id="id_title" /> </div>
+    </div> <div id="div_id_cost" class="form-group row">
+        <label for="id_cost" class="form-control-label col-md-3 text-right">
+            Koszt usługi
+        </label> <div class="col-md-9"> <input type="number" name="cost" step="0.01" class="numberinput form-control" id="id_cost" /> </div>
+    </div> <div id="div_id_note" class="form-group row">
+        <label for="id_note" class="form-control-label col-md-3 text-right">
+            Notatka
+        </label> <div class="col-md-9">
+            <textarea name="note" cols="40" rows="3" class="textarea form-control" id="id_note">
+</textarea>
+        </div>
+    </div> <div id="div_id_employee" class="form-group row">
+        <label for="id_employee" class="form-control-label col-md-3 text-right">
+            Pracownik
+        </label> <div class="col-md-9">
+            <select name="employee" class="select form-control" id="id_employee">
+                <option value="" selected>--nie wybrano pracownika--</option>
+                <option value="d5d4241b-4f22-4e10-b353-38f03e460f3a">Oneshout Oneshout</option>
+
+            </select>
+        </div>
+    </div> <div class="offset-md-3">
+        <div class="form-group">
+            <div class="col-md-offset-3 col-md-9">
+                <div id="div_id_define_as_template" class="checkbox">
+                    <label for="id_define_as_template" class="">
+                        <input type="checkbox" name="define_as_template" class="checkboxinput" id="id_define_as_template" />
+                        Zapisz jako szablon
+                    </label> <small id="hint_id_define_as_template" class="text-muted">Usługa nie będzie przypisana do klienta ani pojazdu</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-12 text-right">
+            <input type="submit"
+                   name="save_changes"
+                   value="Dodaj usługę"
+                   class="btn btn-primary btn-primary bold"
+                   id="submit-id-save_changes" />
+
+        </div>
+
+    </div>
+</form>

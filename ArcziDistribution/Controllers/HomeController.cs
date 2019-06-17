@@ -28,7 +28,31 @@ namespace ArcziDistribution.Controllers
 
             return View();
         }
+        public IActionResult NewCustomer()
+        {
+            ViewData["Message"] = "New Klient";
 
+            return View();
+        }
+        public IActionResult NewVehicle()
+        {
+            ViewData["Message"] = "Nowy Pojazd";
+
+            return View();
+        }
+        public IActionResult NewService()
+        {
+            ViewData["Message"] = "Nowa Usługa";
+
+            return View();
+        }
+        public IActionResult NewReminder()
+        {
+            ViewData["Message"] = "Przypomnienia";
+
+            return View();
+        }
+        
         public IActionResult Privacy()
         {
             return View();
